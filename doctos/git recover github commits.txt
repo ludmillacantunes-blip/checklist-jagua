@@ -1,0 +1,51 @@
+# RESETING GITHUB TO A PREVIOUS COMMIT
+
+# 1. Download latest remote history WITHOUT merging
+git fetch origin
+
+# 2. See recent commit history
+git log --oneline --graph --decorate --all -20
+
+# 3. Identify the LAST GOOD commit hash
+# Example:
+# 8f56f5f  good commit
+# b2c72cb  bad commit
+
+# 4. Restore repository to the good commit
+git reset --hard GOOD_COMMIT_HASH
+
+# Example:
+git reset --hard 8f56f5f
+
+# 5. Overwrite GitHub branch with restored version
+git push --force origin main
+
+
+# RESOLVING CONFLICTS
+
+git status #Check your local changes
+git stash #Save your local work temporarily
+git pull origin main #Download latest good commits
+git stash pop #Reapply your local work
+
+Resolve conflicts if necessary
+<<<<<<<
+your changes
+=======
+their changes
+>>>>>>>
+
+git status #Again to be sure
+git add . #Commit integrated version
+git commit -m "Integrated local work with updated repository"
+git push origin main #Push back to GitHub
+
+
+# ANALYSING COMMITS BEFORE STASHING
+
+git log --oneline --decorate HEAD..origin/main #shows commits that are on GitHub but not in my local repository
+git log HEAD..origin/main #details on who made commits
+git diff --name-status HEAD origin/main #show files
+git diff HEAD origin/main #see contente
+git show origin/main
+git show COMMIT_HASH

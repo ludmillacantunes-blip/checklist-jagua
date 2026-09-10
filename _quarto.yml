@@ -31,13 +31,11 @@ format:
     comments:
       hypothesis: true
 
-editor: visual
-
 execute: 
   warning: false
   error: false
   message: false
-  echo: true
+  echo: false
   freeze: auto
 
 code-copy: true

@@ -1,8 +1,9 @@
 ---
 title: "Title"
 subtitle: |
-  Subtitle 1  
-  Subtitle 2   
+  Subtitle 1<br>
+  OR<br>
+  Subtitle 2
 author:
   - name: Steve Purves
     orcid: 0000-0002-0760-5497
@@ -38,6 +39,8 @@ format:
     code-fold: true
     code-overflow: scroll
     embed-resources: true
+    execute:
+      echo: true
   pdf:
     lof: true
     lot: true
@@ -45,15 +48,18 @@ format:
     code-line-numbers: true
     colorlinks: true
     execute:
-      echo: false
+      echo: true
   docx:
+    lof: true
+    lot: true
+    toc: true
+    reference-doc: refs/custom-rmarkdown-word.docx
     execute:
-      echo: false
-    reference-doc: custom-reference.docx
+      echo: false #add echo: to code chunk options (#|) to overide in specific chunk
 execute:
-  echo: true
   result: hold
   warning: false
+  message: false
 always_allow_html: yes
 editor_options: 
   chunk_output_type: console
@@ -111,7 +117,9 @@ The results section should follow the model in <https://elviomedeiros.github.io/
 
 Authorship of this paper is based on @credit2026.
 
-Author1: Writing – review & editing, Writing – original draft, Formal analysis, Data curation, Conceptualization. Author2: Writing – review & editing, Data curation, Conceptualization. Author3: Writing – review & editing, Formal analysis, Data curation, Conceptualization.
+Author1: Writing – review & editing, Writing – original draft, Formal analysis, Data curation, Conceptualization.\
+Author2: Writing – review & editing, Data curation, Conceptualization.\
+Author3: Writing – review & editing, Formal analysis, Data curation, Conceptualization.
 
 # Ethical approval {.unnumbered}
 

@@ -1,2 +1,2 @@
-# mxr23_Q
-Manuscrito MXR REBio 2023
+# jagua-cap1
+Capítulo 1. Tese sobre o zooplâncton do rio Jaguaribe/CE
